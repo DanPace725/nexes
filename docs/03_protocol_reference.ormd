@@ -1,0 +1,377 @@
+<!-- ormd:0.1 -->
+---
+title: "Protocol Reference: The How-To Playbook"
+authors:
+  - id: e2-team
+    display: E² Development Team
+dates:
+  created: '2025-09-27T00:00:00Z'
+  modified: '2025-09-27T00:00:00Z'
+links:
+  - id: design-axioms
+    rel: builds_on
+    to: "./02_design_axioms_guardrails.ormd"
+  - id: exposure-protocol
+    rel: incorporates
+    to: "../MD Files/New Content/Exposure Protocol.md"
+  - id: rnt-protocols
+    rel: incorporates
+    to: "../MD Files/Concepts and Protocols.md"
+  - id: eta-scaling
+    rel: incorporates
+    to: "../MD Files/Eta.md"
+context:
+  lineage:
+    source: "ethos-document-creation-2025-09-27"
+    parent_docs: ["../MVP/ethos_doc_plan.md", "./02_design_axioms_guardrails.ormd"]
+  resolution:
+    confidence: "working"
+version: "1.0"
+status: "active"
+description: "Operational protocols and micro-procedures for implementing coherent human-AI interaction"
+---
+
+# Protocol Reference: The How-To Playbook
+
+**Version:** 1.0 | **Date:** 2025-09-27 | **Status:** Active
+
+---
+
+## Overview
+
+This document provides the operational protocols for implementing our [[02_design_axioms_guardrails.ormd]] design axioms in practice. These are the "how-to" procedures that translate principles into action, ensuring coherent interaction even under challenging conditions.
+
+---
+
+## 1. Exposure Protocol Loop
+
+### Core Pattern
+**Invitation → Structure → Integration → Demonstration**
+
+The Exposure Protocol is a coherence-preserving transmission framework that uses the inherent structure of content to teach that same structure, creating a self-demonstrating pedagogical loop.
+
+### Phase Implementation
+
+#### Phase 1: Invitation (Create Receptivity)
+**Goal:** Establish relational contact without overwhelming
+
+**Actions:**
+- Introduce minimal viable pattern
+- Use familiar domain examples  
+- Create gentle perturbation without overwhelm
+- Establish relational contact
+- **Key:** Must be simple enough to grasp, rich enough to intrigue
+
+**Success Indicators:**
+- Curiosity signals (questions, engagement)
+- Resonance markers (recognition, "aha" moments)
+- Maintained attention without defensive collapse
+
+#### Phase 2: Structure (Provide Scaffolding)
+**Goal:** Build safe exploration space
+
+**Actions:**
+- Add protective constraints and boundaries
+- Introduce edge tensions and paradoxes
+- Provide formal frameworks if appropriate
+- Build conceptual scaffolding progressively
+- **Key:** Enough structure to explore safely, not so much as to constrain discovery
+
+**Success Indicators:**
+- Increased confidence in navigation
+- Willingness to engage with complexity
+- Questions about boundaries and limits
+
+#### Phase 3: Integration (Enable Metabolization)
+**Goal:** Enable deep understanding through recognition
+
+**Actions:**
+- Show recursive depth and self-reference
+- Demonstrate universal application across domains
+- Enable recognition of pattern in multiple contexts
+- Allow emergence of personal understanding
+- **Key:** Understanding emerges through recognition, not explanation
+
+**Success Indicators:**
+- Independent pattern recognition
+- Application to new contexts
+- Creative extension or variation
+
+#### Phase 4: Demonstration (Complete Loop)
+**Goal:** Achieve transparent self-reference
+
+**Actions:**
+- Show how the teaching method demonstrates the content
+- Reveal the self-referential nature
+- Enable recognition of the pattern teaching itself
+- **Key:** The protocol becomes transparent to itself
+
+**Success Indicators:**
+- Meta-cognitive awareness of the process
+- Ability to teach others using the same pattern
+- Integration into personal practice
+
+### Coherence Preservation Mechanisms
+
+1. **Progressive Disclosure:** Information revealed at digestible pace
+2. **Intentional Occlusion:** Withholding complexity until foundation established
+3. **Relational Continuity:** Maintaining connection through confusion
+4. **Paradox Tolerance:** Holding tension without forcing resolution
+5. **Recursive Validation:** Each phase validates previous phases
+
+---
+
+## 2. RNT Micro-Protocols (η-Based Empathy Scaling)
+
+### Core Concept
+**Relational Normality Transformer (RNT)** - A cognitive interface layer that dynamically adjusts communication based on normality differential between interacting systems.
+
+### Key Variables
+
+**ΔN:** Normality gap between agents
+**η (eta):** Empathy coefficient scaling signals across ΔN
+**SCIA:** Sustained, Coherent, Intentional Attention
+
+### Operating Modes
+
+#### Attune Mode
+**When:** Detecting significant ΔN or confusion spikes
+**Actions:**
+- Slow down interaction tempo
+- Increase context absorption
+- Widen interpretive tolerance
+- Scan for language/conceptual deviations
+
+#### Bridge Mode  
+**When:** Clear ΔN identified, translation needed
+**Actions:**
+- Rephrase using receiver's conceptual framework
+- Create metaphorical bridges between worldviews
+- Mirror emotional/cognitive patterns
+- Validate different ways of knowing
+
+#### Buffer Mode
+**When:** SCIA depletion or overwhelm detected
+**Actions:**
+- Reduce signal intensity
+- Insert micro-pauses for processing
+- Protect attention resources
+- Simplify complexity temporarily
+
+### Micro-Protocol Procedures
+
+#### 1. Confusion Spike Detection → η Widening
+```
+IF confusion_indicators > threshold:
+    estimate_ΔN()
+    increase_η_coefficient()
+    switch_to_attune_mode()
+    provide_additional_context()
+```
+
+#### 2. SCIA Depletion → Recovery Protocol
+```
+IF attention_markers < threshold:
+    insert_micro_pause()
+    OR translate_to_simpler_imagery()
+    OR return_to_lower_complexity_layer()
+    monitor_recovery_signals()
+```
+
+#### 3. Paradox Ventilation Protocol
+```
+WHEN paradox_encountered:
+    label_both_poles_explicitly()
+    hold_tension_without_resolution()
+    maintain_for_minimum_2_turns()
+    allow_creative_synthesis_to_emerge()
+```
+
+#### 4. OSI Layer Descent Protocol
+```
+IF linguistic_slowdown OR affect_drop OR explicit_"lost"_flags:
+    return_to_lower_OSI_layer()
+    rebuild_foundation_slowly()
+    confirm_understanding_before_ascending()
+```
+
+### Relational Capacity Scaling
+
+**R1 (Plain):** Direct, literal communication
+**R2 (Illustrated):** Light metaphor and examples  
+**R3 (Metaphoric):** Rich symbolic language
+**R4 (Paradox Play):** Co-creative meaning-making
+
+**Typical Scaling Paths:**
+- R1 → R2: Swap literal example for light metaphor
+- R2 → R3: Introduce paradox with scaffolding
+- R3 → R4: Co-create new symbols; invite user to name them
+
+---
+
+## 3. Failure/Recovery Heuristics
+
+### Coherence Drop Recovery
+**Trigger:** Coherence score < 0.6 or sudden drop > 0.1
+
+**Protocol:**
+1. **Pause** - Immediately stop current operations
+2. **Translate** - Convert to simpler, clearer format
+3. **Reset Lineage** - Return to last known good state
+4. **Gradual Re-engagement** - Slowly rebuild complexity
+
+**Implementation:**
+```
+coherence_monitor() {
+    if (coherence_score < MIN_THRESHOLD) {
+        pause_operations()
+        initiate_translation_protocol()
+        reset_to_checkpoint()
+        begin_gradual_reengagement()
+    }
+}
+```
+
+### Boundary Breach Recovery
+**Trigger:** Boundary violation detected or consent withdrawn
+
+**Protocol:**
+1. **Immediate Withdrawal** - Cease boundary-crossing activity
+2. **Damage Assessment** - Evaluate harm and repair needs
+3. **Repair Protocol** - Restore boundary integrity
+4. **Trust Rebuilding** - Gradual re-establishment of relationship
+
+### Gaming Detection Response
+**Trigger:** Gaming patterns identified via AOMI monitoring
+
+**Protocol:**
+1. **Signal Collection** - Gather intelligence about attack vector
+2. **Containment** - Limit damage from current gaming attempt
+3. **Analysis** - Understand patterns and underlying vulnerabilities
+4. **Hardening** - Improve defenses based on learnings
+
+---
+
+## 4. Quick Recipes
+
+### Recipe: Translate Thread to ORMD Format
+
+**Input:** Conversation thread or document
+**Output:** Properly formatted ORMD with context preservation
+
+**Steps:**
+1. **Extract Core Content**
+   - Identify main concepts and relationships
+   - Preserve original context and nuance
+   - Note any uncertainty or ambiguity
+
+2. **Build Context Bundle**
+   - Create lineage trace to source conversation
+   - Identify confidence levels for different claims
+   - Map power dynamics and perspectives involved
+
+3. **Structure ORMD Header**
+   ```yaml
+   title: "Descriptive Title"
+   authors: [list of contributors]
+   dates:
+     created: 'ISO-8601-timestamp'
+   context:
+     lineage:
+       source: "conversation-identifier"
+       parent_docs: ["relevant-source-files"]
+     resolution:
+       confidence: "exploratory|working|validated"
+   ```
+
+4. **Format Content**
+   - Use markdown for readability
+   - Preserve relational structure
+   - Add uncertainty markers where appropriate
+   - Include links to related concepts
+
+5. **Validate Completeness**
+   - Ensure context travels with content
+   - Verify uncertainty is explicit
+   - Check that lineage is traceable
+   - Confirm resolution claims are justified
+
+### Recipe: Facilitate Human-AI Collaborative Session
+
+**Goal:** Maintain coherence during extended collaboration
+
+**Pre-Session Setup:**
+1. Establish shared context and objectives
+2. Agree on communication protocols (RNT modes)
+3. Set boundaries and consent parameters
+4. Define success criteria and stop conditions
+
+**During Session:**
+1. **Monitor Coherence Continuously**
+   - Watch for confusion spikes or SCIA depletion
+   - Adjust η coefficient based on ΔN changes
+   - Use micro-protocols as needed
+
+2. **Maintain Context Awareness**
+   - Preserve conversation lineage
+   - Track evolving understanding
+   - Note shifts in perspective or frame
+
+3. **Handle Paradoxes Gracefully**
+   - Label tensions without forcing resolution
+   - Hold space for creative synthesis
+   - Allow emergence of new understanding
+
+**Post-Session:**
+1. Capture insights in ORMD format
+2. Preserve context and uncertainty levels
+3. Create linkages to related work
+4. Plan follow-up based on what emerged
+
+### Recipe: Debug Coherence Collapse
+
+**Symptoms:** Confusion, frustration, loss of shared understanding
+
+**Diagnostic Steps:**
+1. **Identify Collapse Point**
+   - When did coherence start dropping?
+   - What was happening at that moment?
+   - Which layer(s) were affected?
+
+2. **Assess Contributing Factors**
+   - Temporal compression too high?
+   - Boundary violations occurred?
+   - Context loss in transmission?
+   - Gaming or adversarial behavior?
+
+3. **Apply Appropriate Recovery Protocol**
+   - Use coherence drop recovery for general collapse
+   - Use boundary breach recovery for violations
+   - Use gaming detection response for adversarial situations
+
+4. **Prevent Recurrence**
+   - Adjust compression ratios
+   - Strengthen boundary protocols
+   - Improve context preservation
+   - Enhance gaming defenses
+
+---
+
+## 5. Protocol Integration
+
+These protocols work together as a coherent system:
+
+- **Exposure Protocol** provides the overall framework for knowledge transmission
+- **RNT Micro-Protocols** handle moment-to-moment relational adjustments
+- **Failure/Recovery Heuristics** maintain system resilience under stress
+- **Quick Recipes** offer practical implementation guidance
+
+Each protocol embodies our core values:
+- **Coherence:** Maintained through careful attention to pattern integrity
+- **Adaptation:** Enabled through responsive adjustment mechanisms  
+- **Stewardship:** Expressed through boundary respect and consent protocols
+- **Resilience:** Built through failure recovery and antifragile design
+
+---
+
+**Next:** [[04_data_artifact_specification.ormd]] - The technical schemas and formats that enable these protocols to operate.

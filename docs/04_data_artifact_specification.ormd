@@ -1,0 +1,485 @@
+<!-- ormd:0.1 -->
+---
+title: "Data & Artifact Specification: The Schema & Glue"
+authors:
+  - id: e2-team
+    display: E² Development Team
+dates:
+  created: '2025-09-27T00:00:00Z'
+  modified: '2025-09-27T00:00:00Z'
+links:
+  - id: protocol-reference
+    rel: builds_on
+    to: "./03_protocol_reference.ormd"
+  - id: ormd-spec
+    rel: incorporates
+    to: "../MD Files/spec-0.1-context-extension.ormd"
+  - id: clp-spec
+    rel: incorporates
+    to: "../MD Files/New Content/Context Layer Protocol.md"
+context:
+  lineage:
+    source: "ethos-document-creation-2025-09-27"
+    parent_docs: ["../MVP/ethos_doc_plan.md", "./03_protocol_reference.ormd"]
+  resolution:
+    confidence: "working"
+version: "1.0"
+status: "active"
+description: "Technical specifications for data formats, schemas, and interoperability that enable coherent knowledge flow"
+---
+
+# Data & Artifact Specification: The Schema & Glue
+
+**Version:** 1.0 | **Date:** 2025-09-27 | **Status:** Active
+
+---
+
+## Overview
+
+This document defines the technical formats and schemas that enable our [[03_protocol_reference.ormd]] protocols to operate in practice. These specifications ensure that context travels with content, uncertainty remains explicit, and knowledge can flow without loss across different systems and platforms.
+
+---
+
+## 1. ORMD Schema (Organizational Relational Markdown)
+
+### Core Concept
+ORMD extends standard Markdown with structured metadata that preserves relational context and enables coherent knowledge management.
+
+### Basic Structure
+
+```markdown
+<!-- ormd:0.1 -->
+---
+title: "Document Title"
+authors:
+  - id: author-identifier
+    display: "Display Name"
+dates:
+  created: 'YYYY-MM-DDTHH:MM:SSZ'
+  modified: 'YYYY-MM-DDTHH:MM:SSZ'
+links:
+  - id: link-identifier
+    rel: relationship-type
+    to: "path/to/related/document"
+context:
+  lineage:
+    source: "source-identifier"
+    parent_docs: ["path/to/parent1", "path/to/parent2"]
+  resolution:
+    confidence: "exploratory|working|validated"
+version: "semantic-version"
+status: "draft|active|archived|deprecated"
+description: "Brief description of document purpose and content"
+---
+
+# Document Content
+
+Standard Markdown content with enhanced linking...
+```
+
+### Context Extension Fields
+
+#### Lineage Tracking
+```yaml
+context:
+  lineage:
+    source: "conversation-id-2025-09-27"
+    parent_docs: 
+      - "../conversations/session-001.ormd"
+      - "../research/background-study.ormd"
+    derivation_method: "synthesis|extraction|translation|evolution"
+    confidence_inheritance: "preserved|degraded|enhanced"
+```
+
+#### Resolution Metadata
+```yaml
+context:
+  resolution:
+    confidence: "exploratory"  # exploratory|working|validated
+    evidence_strength: "weak|moderate|strong"
+    uncertainty_sources:
+      - "limited-sample-size"
+      - "conflicting-evidence"
+      - "theoretical-speculation"
+    validation_methods:
+      - "peer-review"
+      - "empirical-testing"
+      - "logical-analysis"
+```
+
+#### Temporal Context
+```yaml
+context:
+  temporal:
+    compression_ratio: 2.3
+    natural_timescale: "weeks"
+    imposed_timescale: "days"
+    stability_window: "6-months"
+```
+
+### Link Relationship Types
+
+**Structural Relationships:**
+- `extends` - Builds upon or expands another document
+- `implements` - Provides concrete implementation of abstract concepts
+- `derives_from` - Created from or based on source material
+- `supersedes` - Replaces or updates previous version
+
+**Logical Relationships:**
+- `supports` - Provides evidence or reasoning for claims
+- `contradicts` - Presents conflicting information or perspective
+- `complements` - Adds related but distinct information
+- `contextualizes` - Provides background or situational context
+
+**Temporal Relationships:**
+- `precedes` - Comes before in sequence or causation
+- `follows` - Comes after in sequence or causation
+- `concurrent` - Exists simultaneously or in parallel
+- `cyclical` - Part of recurring or iterative process
+
+---
+
+## 2. ContextBundle Format
+
+### JSON Schema
+```json
+{
+  "id": "urn:cb:01HQZX3M7K9N2P4R6S8T0V2W4Y",
+  "version": "1.0",
+  "created": "2025-09-27T15:30:00Z",
+  "content": {
+    "type": "text/markdown",
+    "data": "# Actual content here...",
+    "encoding": "utf-8"
+  },
+  "frame": {
+    "type": "research.hypothesis",
+    "perspective": "systems-thinking",
+    "domain": "human-ai-interaction",
+    "scope": "local"
+  },
+  "lineage": {
+    "source_type": "conversation",
+    "source_id": "claude-session-2025-09-27",
+    "parent_bundles": [
+      "urn:cb:01HQZX3M7K9N2P4R6S8T0V2W4X"
+    ],
+    "derivation": "synthesis",
+    "confidence_flow": "preserved"
+  },
+  "policy": {
+    "access_level": "public",
+    "usage_rights": "cc-by-sa-4.0",
+    "retention_period": "indefinite",
+    "privacy_constraints": []
+  },
+  "resolution": {
+    "confidence": "working",
+    "evidence_strength": "moderate",
+    "uncertainty_bounds": {
+      "temporal": "6-months",
+      "domain": "human-ai-collaboration",
+      "precision": "framework-level"
+    },
+    "validation_status": "peer-reviewed"
+  },
+  "explain": {
+    "reasoning_trace": [
+      "synthesized from 3 source conversations",
+      "validated against existing literature",
+      "tested in 2 practical applications"
+    ],
+    "evidence_summary": {
+      "support_count": 5,
+      "contradiction_count": 1,
+      "uncertainty_factors": ["limited-sample", "novel-domain"]
+    },
+    "methodology": "qualitative-synthesis"
+  }
+}
+```
+
+### Minimal Working Example
+```json
+{
+  "id": "urn:cb:minimal-example",
+  "version": "1.0",
+  "content": {
+    "type": "text/plain",
+    "data": "This is a minimal context bundle example."
+  },
+  "frame": {
+    "type": "example",
+    "scope": "demonstration"
+  },
+  "resolution": {
+    "confidence": "validated"
+  }
+}
+```
+
+---
+
+## 3. Export Targets & Interoperability
+
+### Obsidian Vault Integration
+
+**Folder Structure:**
+```
+vault/
+├── 00_Index/
+│   ├── home.md
+│   └── navigation.md
+├── 01_Active/
+│   ├── projects/
+│   └── conversations/
+├── 02_Archive/
+│   └── completed/
+├── 03_Templates/
+│   ├── ormd-template.md
+│   └── contextbundle-template.json
+└── 04_Meta/
+    ├── lineage-graph.md
+    └── confidence-tracking.md
+```
+
+**Sync Rules:**
+- ORMD files map directly to Obsidian notes
+- Context metadata becomes Obsidian frontmatter
+- Links preserve relationship semantics
+- Tags generated from context categories
+
+### GitHub Repository Format
+
+**Repository Structure:**
+```
+repo/
+├── docs/
+│   ├── active/
+│   ├── archived/
+│   └── templates/
+├── data/
+│   ├── contextbundles/
+│   └── lineage/
+├── scripts/
+│   ├── ormd-validator.py
+│   └── context-extractor.py
+└── .ormd/
+    ├── config.yaml
+    └── schema.json
+```
+
+**Git Integration:**
+- Each ORMD file tracked with full history
+- Context changes trigger lineage updates
+- Confidence levels tracked in commit messages
+- Automated validation on push
+
+### PKM Bridge Specifications
+
+**Roam Research:**
+- Block references preserve context links
+- Daily notes capture temporal context
+- Graph database maintains relationship network
+
+**Notion:**
+- Database properties map to context metadata
+- Relation fields preserve link semantics
+- Templates enforce ORMD structure
+
+**Logseq:**
+- Block properties store context data
+- Namespace organization by confidence level
+- Query system enables context filtering
+
+---
+
+## 4. Sync Rules & Conflict Resolution
+
+### Local-First Architecture (PouchDB)
+
+**Core Principles:**
+- All data stored locally first
+- Offline-capable operation
+- Eventual consistency model
+- Conflict resolution preserves context
+
+**Sync Protocol:**
+```javascript
+// Simplified sync logic
+const syncConfig = {
+  live: true,
+  retry: true,
+  back_off_function: exponentialBackoff,
+  conflicts_include_revs: true,
+  filter: (doc) => doc.status !== 'draft'
+}
+
+db.sync(remoteDB, syncConfig)
+  .on('change', handleContextualChange)
+  .on('conflict', resolveWithLineage)
+```
+
+### Federated Synchronization (CouchDB)
+
+**Federation Model:**
+- Multiple independent nodes
+- Selective replication based on policy
+- Context-aware conflict resolution
+- Lineage preservation across nodes
+
+**Conflict Resolution Strategy:**
+1. **Automatic Resolution:** When confidence levels clearly indicate priority
+2. **Context-Aware Merging:** Preserve both versions with explicit uncertainty
+3. **Human Arbitration:** For complex conflicts requiring judgment
+4. **Lineage Tracking:** All resolution decisions become part of document history
+
+### Versioning & Lineage Tracking
+
+**Version Schema:**
+```
+major.minor.patch-context
+1.0.0-working
+1.1.0-validated  
+2.0.0-breaking
+```
+
+**Lineage Graph:**
+```json
+{
+  "document_id": "urn:ormd:example",
+  "version": "1.2.0",
+  "lineage_chain": [
+    {
+      "parent": "urn:ormd:source-conversation",
+      "relationship": "derives_from",
+      "confidence_transfer": "preserved",
+      "timestamp": "2025-09-27T10:00:00Z"
+    },
+    {
+      "parent": "urn:ormd:background-research", 
+      "relationship": "incorporates",
+      "confidence_transfer": "enhanced",
+      "timestamp": "2025-09-27T11:30:00Z"
+    }
+  ],
+  "confidence_history": [
+    {"level": "exploratory", "timestamp": "2025-09-27T10:00:00Z"},
+    {"level": "working", "timestamp": "2025-09-27T12:00:00Z"}
+  ]
+}
+```
+
+---
+
+## 5. Validation & Quality Assurance
+
+### Schema Validation
+
+**ORMD Validator:**
+```python
+def validate_ormd(document):
+    """Validate ORMD document structure and content."""
+    checks = [
+        validate_yaml_frontmatter(document),
+        validate_context_completeness(document),
+        validate_link_integrity(document),
+        validate_confidence_claims(document),
+        validate_lineage_consistency(document)
+    ]
+    return all(checks)
+```
+
+**ContextBundle Validator:**
+```python
+def validate_context_bundle(bundle):
+    """Validate ContextBundle JSON structure."""
+    required_fields = ['id', 'version', 'content', 'frame', 'resolution']
+    return all(field in bundle for field in required_fields)
+```
+
+### Quality Metrics
+
+**Context Completeness Score:**
+```
+completeness = (present_fields / required_fields) * 100
+```
+
+**Lineage Integrity Score:**
+```
+integrity = (valid_links / total_links) * 100
+```
+
+**Confidence Calibration Score:**
+```
+calibration = correlation(claimed_confidence, actual_accuracy)
+```
+
+### Automated Quality Checks
+
+**Pre-Commit Hooks:**
+- ORMD schema validation
+- Link integrity verification
+- Confidence level consistency
+- Lineage chain validation
+
+**Continuous Integration:**
+- Cross-reference validation
+- Confidence calibration analysis
+- Context completeness reporting
+- Breaking change detection
+
+---
+
+## 6. Implementation Examples
+
+### Example 1: Meeting Notes to ORMD
+
+**Input:** Raw meeting transcript
+**Process:**
+1. Extract key decisions and action items
+2. Identify participants and their contributions
+3. Assess confidence levels for different claims
+4. Create lineage links to related documents
+5. Generate ORMD with appropriate context metadata
+
+**Output:**
+```markdown
+<!-- ormd:0.1 -->
+---
+title: "Sprint Planning Meeting - Week 42"
+authors:
+  - id: alice-johnson
+    display: "Alice Johnson"
+  - id: bob-smith  
+    display: "Bob Smith"
+dates:
+  created: '2025-09-27T14:30:00Z'
+context:
+  lineage:
+    source: "zoom-meeting-sprint-42"
+    parent_docs: ["../retrospectives/sprint-41-retro.ormd"]
+  resolution:
+    confidence: "working"
+---
+
+# Sprint Planning Notes
+
+Based on our retrospective findings...
+```
+
+### Example 2: Research Paper to ContextBundle
+
+**Input:** Academic paper PDF
+**Process:**
+1. Extract abstract, methodology, and conclusions
+2. Identify confidence levels for different claims
+3. Map citations to lineage relationships
+4. Assess evidence strength and uncertainty sources
+5. Generate ContextBundle with full metadata
+
+**Output:** Complete ContextBundle JSON with research-specific frame and high-confidence resolution metadata.
+
+---
+
+**Next:** [[05_mvp_playbook.ormd]] - The practical implementation plan for building these specifications into working systems.

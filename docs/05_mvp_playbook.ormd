@@ -1,0 +1,379 @@
+<!-- ormd:0.1 -->
+---
+title: "MVP Playbook: The Pragmatic Build Plan"
+authors:
+  - id: e2-team
+    display: E² Development Team
+dates:
+  created: '2025-09-27T00:00:00Z'
+  modified: '2025-09-27T00:00:00Z'
+links:
+  - id: data-specification
+    rel: builds_on
+    to: "./04_data_artifact_specification.ormd"
+  - id: foundational-ethos
+    rel: implements
+    to: "./01_foundational_ethos.ormd"
+context:
+  lineage:
+    source: "ethos-document-creation-2025-09-27"
+    parent_docs: ["../MVP/ethos_doc_plan.md", "./04_data_artifact_specification.ormd"]
+  resolution:
+    confidence: "working"
+version: "1.0"
+status: "active"
+description: "Practical implementation roadmap for building the E² relational intelligence platform"
+---
+
+# MVP Playbook: The Pragmatic Build Plan
+
+**Version:** 1.0 | **Date:** 2025-09-27 | **Status:** Active
+
+---
+
+## 1. Vision in One Line
+
+**"Slack-for-AI-and-people that thinks with you."**
+
+A collaborative intelligence platform where humans and AIs work together as peers, with context that travels, uncertainty that's visible, and knowledge that flows without loss across conversations, documents, and time.
+
+---
+
+## 2. Roadmap Phases
+
+### Phase 1: MVP Foundation (Months 1-3)
+**Goal:** Prove core concept with minimal viable features
+
+**Core Features:**
+- Basic chat interface with AI integration
+- ORMD document creation and editing
+- Context preservation across conversations
+- Simple lineage tracking
+- Obsidian vault export
+
+**Success Criteria:**
+- 3 users can have coherent multi-session conversations
+- Context bundles preserve meaning across exports
+- Basic uncertainty tracking works reliably
+
+### Phase 2: Orchestration Layer (Months 4-6)
+**Goal:** Enable sophisticated multi-agent workflows
+
+**Added Features:**
+- Multiple AI model integration (@GPT, @Claude, @Local)
+- Workflow orchestration and task delegation
+- Advanced context routing and filtering
+- Collaborative document editing
+- Enhanced lineage visualization
+
+**Success Criteria:**
+- Complex projects managed across multiple AI agents
+- Workflow templates enable repeatable processes
+- Context routing prevents information overload
+
+### Phase 3: Knowledge Layer (Months 7-9)
+**Goal:** Transform platform into living knowledge system
+
+**Added Features:**
+- Semantic search across all content
+- Automated knowledge graph generation
+- Pattern recognition and insight synthesis
+- Confidence calibration and validation
+- Advanced uncertainty quantification
+
+**Success Criteria:**
+- Platform generates novel insights from accumulated knowledge
+- Confidence predictions are well-calibrated
+- Knowledge graph enables discovery of hidden connections
+
+### Phase 4: Federation (Months 10-12)
+**Goal:** Enable distributed, interoperable knowledge networks
+
+**Added Features:**
+- Multi-node federation protocols
+- Cross-platform synchronization
+- Decentralized identity and access management
+- Advanced privacy and security controls
+- Open protocol specifications
+
+**Success Criteria:**
+- Multiple organizations can federate knowledge safely
+- Cross-platform interoperability works seamlessly
+- Privacy controls enable selective sharing
+
+---
+
+## 3. Open Source Technology Stack
+
+### Core Platform
+**Rocket.Chat** - Base communication platform
+- Mature, open-source chat infrastructure
+- Extensible plugin architecture
+- Self-hostable for privacy control
+- Active community and development
+
+**Modifications Required:**
+- ORMD integration for message formatting
+- Context bundle attachment system
+- Lineage tracking middleware
+- Confidence level indicators in UI
+
+### AI Orchestration
+**LangGraph** - Multi-agent workflow orchestration
+- Graph-based workflow definition
+- State management across conversation turns
+- Error handling and recovery protocols
+- Integration with multiple AI providers
+
+**OpenRouter** - AI model access layer
+- Unified API for multiple AI providers
+- Cost optimization and load balancing
+- Fallback and redundancy handling
+- Usage analytics and monitoring
+
+### Knowledge Management
+**Flowise** - Visual workflow builder
+- No-code AI workflow creation
+- Integration with vector databases
+- Custom node development capability
+- Export to production environments
+
+**Obsidian** - Knowledge vault integration
+- Rich markdown editing environment
+- Graph visualization capabilities
+- Plugin ecosystem for extensions
+- Local-first data storage
+
+### Data Layer
+**PouchDB/CouchDB** - Distributed database
+- Local-first architecture
+- Automatic synchronization
+- Conflict resolution protocols
+- Offline-capable operation
+
+**Weaviate** - Vector database for semantic search
+- Open-source vector search engine
+- Multi-modal embedding support
+- GraphQL query interface
+- Scalable cloud deployment
+
+### Infrastructure
+**Docker/Kubernetes** - Containerized deployment
+- Consistent development/production environments
+- Horizontal scaling capabilities
+- Service mesh integration
+- Health monitoring and auto-recovery
+
+**Traefik** - API gateway and load balancer
+- Automatic service discovery
+- SSL/TLS termination
+- Rate limiting and security
+- Metrics and monitoring integration
+
+---
+
+## 4. User Journeys
+
+### Journey 1: Research Collaboration
+**Participants:** Human researcher + AI research assistant
+
+**Scenario:**
+1. Human starts research project on "AI consciousness ethics"
+2. @Claude helps gather initial sources and create literature map
+3. Conversation context automatically preserved in ORMD format
+4. Human adds personal insights and uncertainty markers
+5. @GPT provides alternative perspectives and critiques
+6. System maintains lineage between all contributions
+7. Final research summary exports to Obsidian with full context
+
+**Value Delivered:**
+- No context loss between AI interactions
+- Uncertainty explicitly tracked and preserved
+- Research lineage enables reproducibility
+- Multi-perspective synthesis enhances quality
+
+### Journey 2: Product Development Planning
+**Participants:** Product team + multiple AI specialists
+
+**Scenario:**
+1. Team initiates product planning session in shared workspace
+2. @ProductGPT analyzes market requirements and constraints
+3. @TechClaude evaluates technical feasibility and architecture
+4. @DesignAI generates user experience concepts and flows
+5. Human team members add business context and priorities
+6. System orchestrates multi-round refinement process
+7. Final product spec generated with confidence levels for each decision
+
+**Value Delivered:**
+- Coordinated multi-agent collaboration
+- Explicit uncertainty about different aspects
+- Traceable decision-making process
+- Integrated human and AI contributions
+
+### Journey 3: Knowledge Federation
+**Participants:** Multiple organizations sharing research
+
+**Scenario:**
+1. Research lab publishes findings in federated knowledge network
+2. Corporate R&D team discovers relevant research through semantic search
+3. Cross-organizational collaboration initiated with privacy controls
+4. Joint research project emerges with shared context bundles
+5. Results published back to network with proper attribution
+6. Knowledge graph reveals unexpected connections across domains
+
+**Value Delivered:**
+- Secure knowledge sharing across organizational boundaries
+- Discovery of relevant work through semantic connections
+- Proper attribution and lineage tracking
+- Emergent insights from federated intelligence
+
+---
+
+## 5. Definition of Done (MVP)
+
+### Criterion 1: Chat Works Coherently
+**Requirement:** Users can have multi-session conversations with AI that maintain context and coherence.
+
+**Acceptance Tests:**
+- [ ] Conversation context preserved across sessions
+- [ ] AI can reference previous discussions accurately
+- [ ] Context bundles generated automatically
+- [ ] Uncertainty levels tracked and displayed
+- [ ] Lineage links created between related conversations
+
+**Technical Implementation:**
+- Rocket.Chat with ORMD message formatting
+- Context bundle storage in PouchDB
+- Automatic lineage generation middleware
+- Confidence level UI indicators
+
+### Criterion 2: Summary Exports Work
+**Requirement:** Conversations and documents can be exported to standard formats while preserving context.
+
+**Acceptance Tests:**
+- [ ] ORMD export maintains all metadata
+- [ ] Obsidian import preserves links and structure
+- [ ] Context bundles validate against schema
+- [ ] Lineage graphs render correctly
+- [ ] Confidence levels display appropriately
+
+**Technical Implementation:**
+- ORMD export functionality
+- Obsidian plugin for import/sync
+- Schema validation pipeline
+- Graph visualization components
+
+### Criterion 3: Obsidian Sync Works
+**Requirement:** Seamless bidirectional synchronization between platform and Obsidian vaults.
+
+**Acceptance Tests:**
+- [ ] Changes in platform sync to Obsidian
+- [ ] Changes in Obsidian sync back to platform
+- [ ] Conflict resolution preserves context
+- [ ] Sync works offline and online
+- [ ] Performance acceptable for large vaults
+
+**Technical Implementation:**
+- Obsidian plugin with sync capabilities
+- PouchDB/CouchDB replication
+- Conflict resolution algorithms
+- Offline-first architecture
+- Performance optimization
+
+---
+
+## 6. Development Methodology
+
+### Agile with Coherence Principles
+**Sprint Structure:** 2-week sprints with coherence reviews
+
+**Sprint Planning:**
+- Assess temporal compression ratios for planned work
+- Ensure adequate buffer time for quality
+- Define clear boundaries and success criteria
+- Plan for uncertainty and adaptation
+
+**Daily Standups:**
+- Context preservation check: "What context needs to travel?"
+- Uncertainty acknowledgment: "What are we unsure about?"
+- Boundary respect: "What limits should we honor?"
+- Coherence monitoring: "Is our understanding aligned?"
+
+**Sprint Reviews:**
+- Demonstrate working features with full context
+- Review confidence levels for completed work
+- Assess coherence of overall system
+- Plan adaptations based on learnings
+
+**Retrospectives:**
+- Analyze temporal compression impacts
+- Review boundary violations and repairs
+- Assess gaming attempts and defenses
+- Plan resilience improvements
+
+### Quality Assurance
+**Coherence Testing:**
+- Context preservation across all operations
+- Uncertainty tracking accuracy
+- Lineage integrity validation
+- Confidence calibration assessment
+
+**Resilience Testing:**
+- Failure mode simulation
+- Gaming attempt red-teaming
+- Boundary violation scenarios
+- Recovery protocol validation
+
+**User Experience Testing:**
+- Cognitive load assessment
+- Workflow efficiency measurement
+- Collaboration effectiveness evaluation
+- Learning curve analysis
+
+---
+
+## 7. Success Metrics
+
+### Technical Metrics
+- **Context Preservation Rate:** >95% of context successfully preserved across operations
+- **Lineage Integrity Score:** >90% of links remain valid and meaningful
+- **Confidence Calibration:** Predicted vs. actual accuracy correlation >0.8
+- **System Availability:** >99.5% uptime with graceful degradation
+
+### User Experience Metrics
+- **Coherence Score:** User-reported understanding maintained across sessions >4.0/5.0
+- **Workflow Efficiency:** Task completion time reduced by >30% vs. baseline
+- **Collaboration Quality:** Multi-agent project success rate >80%
+- **Learning Velocity:** Time to productive use <2 hours for new users
+
+### Business Metrics
+- **User Retention:** >70% monthly active users after 3 months
+- **Knowledge Growth:** >50% increase in connected knowledge per user per month
+- **Federation Adoption:** >5 organizations participating in knowledge sharing
+- **Open Source Contributions:** >20 external contributors to core platform
+
+---
+
+## 8. Risk Mitigation
+
+### Technical Risks
+**Context Loss:** Implement redundant context preservation with validation
+**Scalability Issues:** Design for horizontal scaling from day one
+**AI Model Dependencies:** Multi-provider architecture with fallbacks
+**Data Corruption:** Immutable lineage logs with recovery protocols
+
+### User Experience Risks
+**Complexity Overwhelm:** Progressive disclosure with simple defaults
+**Cognitive Overload:** Attention budget monitoring and protection
+**Trust Issues:** Transparent uncertainty and confidence displays
+**Adoption Barriers:** Comprehensive onboarding and documentation
+
+### Business Risks
+**Open Source Sustainability:** Clear governance and funding models
+**Competitive Pressure:** Focus on unique relational intelligence value
+**Regulatory Compliance:** Privacy-by-design and data sovereignty
+**Community Fragmentation:** Strong technical standards and protocols
+
+---
+
+**Next:** [[06_relational_compass.ormd]] - The poetic expression of our ethos and the soul check for our work.

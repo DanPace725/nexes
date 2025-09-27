@@ -1,0 +1,292 @@
+<!-- ormd:0.1 -->
+---
+title: "Design Axioms & Guardrails: The Rules of the Road"
+authors:
+  - id: e2-team
+    display: E² Development Team
+dates:
+  created: '2025-09-27T00:00:00Z'
+  modified: '2025-09-27T00:00:00Z'
+links:
+  - id: foundational-ethos
+    rel: builds_on
+    to: "./01_foundational_ethos.ormd"
+  - id: temporal-compression
+    rel: incorporates
+    to: "../MD Files/New Content/Temporal Compression and Ethical Occlusion.md"
+  - id: aomi-framework
+    rel: incorporates
+    to: "../MD Files/New Content/Adversarial Occlusion and Mechanism Integrity V1.md"
+  - id: context-layer-protocol
+    rel: incorporates
+    to: "../MD Files/New Content/Context Layer Protocol.md"
+context:
+  lineage:
+    source: "ethos-document-creation-2025-09-27"
+    parent_docs: ["../MVP/ethos_doc_plan.md", "./01_foundational_ethos.ormd"]
+  resolution:
+    confidence: "working"
+version: "1.0"
+status: "active"
+description: "Non-negotiable design principles and operational guardrails that ensure systems remain coherent under pressure"
+---
+
+# Design Axioms & Guardrails: The Rules of the Road
+
+**Version:** 1.0 | **Date:** 2025-09-27 | **Status:** Active
+
+---
+
+## Overview
+
+These are the **non-negotiables**—the design principles that must hold even when systems are under pressure, being gamed, or operating at scale. They translate our [[01_foundational_ethos.ormd]] foundational ethos into operational constraints that protect coherence and prevent harmful collapse.
+
+---
+
+## 1. Temporal Compression Law
+
+### Core Principle
+**Don't compress beyond resolution limits.**
+
+### The Physics
+Every system has natural timescales (T_nat) for coherent pattern formation. When we impose faster timescales (T_imp), we create compression:
+
+```
+C_eff = T_nat / T_imp
+```
+
+When C_eff exceeds critical thresholds (C*), systems enter **Zone 3** behavior:
+- Attribution becomes impossible
+- Ethical occlusion increases exponentially  
+- Computational irreducibility dominates
+- Failure modes become unpredictable
+
+### Design Implications
+
+**Resolution-Responsibility Law:**
+```
+R × C_eff ≤ R_max
+```
+Where:
+- R = Required resolution for ethical operation
+- C_eff = Effective compression across system layers
+- R_max = Maximum achievable resolution given current resources
+
+**Practical Guardrails:**
+- **Buffer Requirements:** Maintain 20-30% slack capacity for unexpected load
+- **Compression Monitoring:** Real-time tracking of C_eff across all system layers
+- **Graceful Degradation:** When approaching C*, reduce precision rather than break
+- **Stop Rules:** Hard limits beyond which operations must halt
+
+---
+
+## 2. Boundary Protocol
+
+### Core Principle
+**Respect limits; preserve emergence.**
+
+### The Geometry
+Boundaries are not barriers—they are **sacred manifolds** that enable coherent pattern formation. The boundary is the organ of coherence; its rupture is the death of possibility.
+
+### Boundary Types
+
+**Epistemic Boundaries:**
+- What can be known vs. what must remain uncertain
+- Resolution floors below which claims become meaningless
+- Confidence intervals that reflect actual evidence
+
+**Temporal Boundaries:**
+- Natural rhythms that cannot be compressed
+- Integration periods required for metabolizing change
+- Rest cycles necessary for pattern consolidation
+
+**Relational Boundaries:**
+- Consent protocols for information access
+- Privacy membranes that protect vulnerable data
+- Trust boundaries that define collaboration scope
+
+**Computational Boundaries:**
+- Resource limits that prevent system overload
+- Attention budgets that maintain focus
+- Complexity ceilings that preserve comprehensibility
+
+### Implementation Patterns
+
+**Signal Before Entry:**
+- Always announce intent before crossing boundaries
+- Wait for explicit permission or resonance signals
+- Match the fragility of the system with softness of contact
+
+**Graduated Response:**
+- Gentle probing before full engagement
+- Incremental trust building over time
+- Retreat when resistance is encountered
+
+**Boundary Maintenance:**
+- Regular boundary health checks
+- Repair protocols when boundaries are damaged
+- Evolution of boundaries as systems mature
+
+---
+
+## 3. CLP Principles (Context Layer Protocol)
+
+### Core Principle
+**Context, provenance, resolution limits, and policy are first-class.**
+
+### The Four-Axis Design Lens
+
+**Resources (Constraint):**
+- Compute, storage, time limitations
+- Attention budgets and bandwidth constraints
+- Energy costs of maintaining coherence
+
+**Cognition (Constraint):**
+- Human/model attention capacity
+- Verification and validation limits
+- Learning and adaptation rates
+
+**Context (Field Condition):**
+- Frames, lineage, semantics that create coherence
+- Relational structures that preserve meaning
+- Historical traces that enable understanding
+
+**Power (Curvature/Gradient):**
+- Policies, roles, incentives that bend outcomes
+- Authority structures that shape decisions
+- Economic forces that drive behavior
+
+### CLP Requirements
+
+**Every ContextBundle Must Include:**
+- **Content:** The actual information or data
+- **Frame:** The interpretive context and perspective
+- **Lineage:** Provenance and derivation history
+- **Policy:** Access controls and usage constraints
+- **Resolution:** Confidence levels and uncertainty bounds
+- **Explain:** Reasoning traces and evidence chains
+
+**Operational Guarantees:**
+- Context travels with content across all transformations
+- Uncertainty is made explicit, never hidden
+- Power dynamics are transparent and auditable
+- Resolution floors prevent over-precision claims
+
+---
+
+## 4. AOMI Principles (Adversarial Occlusion & Mechanism Integrity)
+
+### Core Principle
+**Assume gaming inevitable; design antifragile.**
+
+### The Gaming Inevitability Principle
+Any sufficiently sophisticated accountability mechanism will be gamed by actors who understand its structure. In the AI era, this gaming escalates exponentially.
+
+### Defense Architecture
+
+**Layer 1: Paradoxical Policing**
+- Make high-occlusion pathways more risky, not less risky
+- Audit probability increases with occlusion level: P_audit = g(Ω) where g'(Ω) > 0
+- Complexity penalties: more complex justifications require higher evidence standards
+
+**Layer 2: Adversarial Reserve Capacity**
+- Build 25-30% excess capacity specifically to absorb gaming
+- Graceful degradation protocols when gaming pressure exceeds thresholds
+- Backup systems that activate under attack
+
+**Layer 3: Exploitation-as-Signal Intelligence**
+- Treat gaming attempts as valuable intelligence about vulnerabilities
+- Catalog attack patterns to improve defenses
+- Use gaming intelligence to proactively harden untargeted areas
+
+**Layer 4: Self-Exposure Amplification**
+- Gaming behavior creates more signals than honest behavior
+- Detection through coordination overhead and explanation complexity
+- Pattern inconsistency analysis reveals gaming attempts
+
+### Antifragile Design Patterns
+
+**Stress Testing:**
+- Regular red-team exercises to find vulnerabilities
+- Controlled gaming scenarios to test defenses
+- Failure injection to verify graceful degradation
+
+**Adaptive Hardening:**
+- Systems that become stronger when attacked
+- Learning from gaming attempts to improve robustness
+- Evolution of defenses based on attack intelligence
+
+---
+
+## 5. Design Axiom Cheatsheet
+
+### Machine-Parsable Principles
+
+```yaml
+temporal_compression:
+  max_compression_ratio: 3.0
+  buffer_requirement: 0.25
+  stop_rule_threshold: 5.0
+  monitoring_frequency: "real-time"
+
+boundary_protocol:
+  signal_before_entry: required
+  consent_timeout: 30s
+  boundary_health_check: "hourly"
+  repair_threshold: 0.8
+
+clp_requirements:
+  context_bundle_complete: required
+  uncertainty_explicit: required
+  power_transparent: required
+  resolution_floors: enforced
+
+aomi_defenses:
+  reserve_capacity: 0.3
+  audit_probability_slope: 2.0
+  gaming_detection_threshold: 0.7
+  adaptation_cycle: "weekly"
+
+coherence_monitoring:
+  min_coherence_score: 0.6
+  degradation_alert_threshold: 0.1
+  recovery_protocol: "pause_translate_reset"
+  measurement_frequency: "per_operation"
+```
+
+### Failure Recovery Heuristics
+
+**When Coherence Drops:**
+1. **Pause** - Stop current operations
+2. **Translate** - Convert to simpler/clearer format
+3. **Reset Lineage** - Return to last known good state
+4. **Gradual Re-engagement** - Slowly rebuild complexity
+
+**When Boundaries Are Breached:**
+1. **Immediate Withdrawal** - Cease boundary-crossing activity
+2. **Damage Assessment** - Evaluate harm and repair needs
+3. **Repair Protocol** - Restore boundary integrity
+4. **Trust Rebuilding** - Gradual re-establishment of relationship
+
+**When Gaming Is Detected:**
+1. **Signal Collection** - Gather intelligence about attack
+2. **Containment** - Limit damage from current attack
+3. **Analysis** - Understand attack patterns and vulnerabilities
+4. **Hardening** - Improve defenses based on learnings
+
+---
+
+## 6. Integration with Ethos
+
+These axioms are not arbitrary rules but direct expressions of our core values:
+
+- **Coherence** → Temporal Compression Law & CLP Principles
+- **Adaptation** → Boundary Protocol & AOMI Defenses  
+- **Stewardship** → Boundary Protocol & Resolution Floors
+- **Resilience** → AOMI Principles & Failure Recovery
+
+Every technical decision must pass the axiom test: Does this preserve coherence under pressure? Does it respect boundaries? Does it make context and uncertainty visible? Does it assume and defend against gaming?
+
+---
+
+**Next:** [[03_protocol_reference.ormd]] - The operational playbook for implementing these principles in practice.
