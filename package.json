@@ -1,0 +1,36 @@
+{
+  "name": "nexes",
+  "version": "0.1.0",
+  "description": "E² Relational Intelligence Platform - Slack-for-AI-and-people that thinks with you",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Development server not yet implemented'",
+    "build": "echo 'Build process not yet implemented'",
+    "test": "echo 'Tests not yet implemented'",
+    "setup:rocketchat": "cd Rocket.Chat && yarn install",
+    "start:mongo": "cd Rocket.Chat && docker compose -f docker-compose-local.yml up -d mongo",
+    "stop:mongo": "cd Rocket.Chat && docker compose -f docker-compose-local.yml down"
+  },
+  "keywords": [
+    "ai",
+    "collaboration", 
+    "knowledge-management",
+    "relational-intelligence",
+    "ormd",
+    "context-preservation"
+  ],
+  "author": "E² Development Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
