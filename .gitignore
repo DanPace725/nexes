@@ -156,3 +156,5 @@ docs-build/
 scratch/
 playground/
 experiments/
+package-lock.json
+packages/ormd-parser/package-lock.json
