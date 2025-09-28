@@ -1,0 +1,41 @@
+{
+  "name": "@nexes/context-storage",
+  "version": "0.1.0",
+  "description": "Local-first storage layer for ContextBundles with relationship mapping",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "context",
+    "storage",
+    "pouchdb",
+    "local-first",
+    "ormd",
+    "relationships"
+  ],
+  "author": "E² Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "@nexes/ormd-parser": "file:../ormd-parser",
+    "pouchdb": "^8.0.1",
+    "pouchdb-find": "^8.0.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/pouchdb": "^6.4.2",
+    "@types/uuid": "^9.0.7",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "ts-jest": "^29.0.0"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
