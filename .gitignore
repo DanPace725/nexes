@@ -157,4 +157,5 @@ scratch/
 playground/
 experiments/
 package-lock.json
-packages/ormd-parser/package-lock.json
+nexes/packages/ormd-parser/package-lock.json
+package.json
