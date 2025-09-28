@@ -147,3 +147,4 @@ function convertCommand(content: string, filePath: string) {
 if (require.main === module) {
   main();
 }
+
