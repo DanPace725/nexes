@@ -54,17 +54,35 @@ yarn install
 yarn dev
 ```
 
+### Run the chat demo
+
+```bash
+# Build the chat interface workspace
+yarn workspace @nexes/chat-interface build
+
+# Launch the CLI demo
+yarn workspace @nexes/chat-interface start
+```
+
+The CLI provides conversational tooling for iterative handoffs:
+
+- `/decision` to capture and summarize choices
+- `/handoff` to generate ORMD handoff artifacts (see [example output](./HANDOFF_DOCUMENT_2025-09-30.ormd))
+- `/export` to bundle the current context for downstream tools
+
 ### Current Development Status
 
 #### ✅ Completed
 - [x] Foundational documentation and ethos
 - [x] Project structure initialization
 - [x] MongoDB development environment
+- [x] ORMD format implementation
+- [x] Basic context bundle storage
+- [x] Published `@nexes/ai-handoff` package
+- [x] Published `@nexes/chat-interface` package
 
-#### 🚧 In Progress  
+#### 🚧 In Progress
 - [ ] Rocket.Chat development environment setup
-- [ ] ORMD format implementation
-- [ ] Basic context bundle storage
 
 #### 📋 Planned
 - [ ] AI integration layer
