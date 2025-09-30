@@ -156,3 +156,11 @@ docs-build/
 scratch/
 playground/
 experiments/
+
+# PouchDB databases (local test data)
+*_contexts/
+*_contexts-*/
+*_relationships/
+*_relationships-*/
+*_test_contexts/
+*_test_relationships/

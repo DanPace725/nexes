@@ -149,9 +149,7 @@ export class ContextStorage implements ContextStorageInterface {
     // Build PouchDB selector
     const selector: any = {};
     
-    if (query.search) {
-      selector.search_text = { $regex: new RegExp(query.search, 'i') };
-    }
+    // Note: PouchDB doesn't support regex, so we'll handle search separately
     
     if (query.tags && query.tags.length > 0) {
       selector.tags = { $in: query.tags };
@@ -176,19 +174,44 @@ export class ContextStorage implements ContextStorageInterface {
     }
 
     // Execute query
-    const findOptions: any = {
-      selector,
-      limit: query.limit || 50,
-      skip: query.skip || 0
-    };
+    let results;
+    
+    if (Object.keys(selector).length === 0 && !query.search) {
+      // No filters, get all docs
+      const allDocs = await this.db.allDocs({ 
+        include_docs: true,
+        limit: query.limit || 50,
+        skip: query.skip || 0
+      });
+      results = { docs: allDocs.rows.map(row => row.doc).filter(doc => doc) as StoredContextBundle[] };
+    } else if (query.search && Object.keys(selector).length === 0) {
+      // Only search filter, use our search method
+      const searchResults = await this.search(query.search, query.limit || 50);
+      results = { docs: searchResults.slice(query.skip || 0) };
+    } else {
+      // Use PouchDB find for non-search filters
+      const findOptions: any = {
+        selector,
+        limit: query.limit || 50,
+        skip: query.skip || 0
+      };
 
-    if (query.sort_by) {
-      const sortField = query.sort_by === 'created' ? 'created' : 
-                       query.sort_by === 'modified' ? 'frame.modified' : 'indexed_at';
-      findOptions.sort = [{ [sortField]: query.sort_order === 'desc' ? 'desc' : 'asc' }];
+      if (query.sort_by) {
+        const sortField = query.sort_by === 'created' ? 'created' : 
+                         query.sort_by === 'modified' ? 'indexed_at' : 'indexed_at';
+        findOptions.sort = [{ [sortField]: query.sort_order === 'desc' ? 'desc' : 'asc' }];
+      }
+
+      results = await this.db.find(findOptions);
+      
+      // Apply search filter manually if needed
+      if (query.search) {
+        const searchTerm = query.search.toLowerCase();
+        results.docs = results.docs.filter(doc => 
+          doc.search_text && doc.search_text.toLowerCase().includes(searchTerm)
+        );
+      }
     }
-
-    const result = await this.db.find(findOptions);
     
     // Get relationships if needed
     let relationships: RelationshipIndex[] = [];
@@ -199,22 +222,25 @@ export class ContextStorage implements ContextStorageInterface {
     const queryTime = Date.now() - startTime;
 
     return {
-      bundles: result.docs,
-      total_count: result.docs.length, // Note: PouchDB doesn't provide total count easily
+      bundles: results.docs,
+      total_count: results.docs.length, // Note: PouchDB doesn't provide total count easily
       relationships,
       query_time_ms: queryTime
     };
   }
 
   async search(text: string, limit: number = 20): Promise<StoredContextBundle[]> {
-    const result = await this.db.find({
-      selector: {
-        search_text: { $regex: new RegExp(text, 'i') }
-      },
-      limit
-    });
+    // PouchDB doesn't support regex in selectors, so we'll get all docs and filter manually
+    // For better performance in production, we'd want to use a proper search index
+    const allDocs = await this.db.allDocs({ include_docs: true });
+    
+    const searchTerm = text.toLowerCase();
+    const matches = allDocs.rows
+      .map(row => row.doc)
+      .filter(doc => doc && doc.search_text && doc.search_text.toLowerCase().includes(searchTerm))
+      .slice(0, limit) as StoredContextBundle[];
 
-    return result.docs;
+    return matches;
   }
 
   async addRelationship(
