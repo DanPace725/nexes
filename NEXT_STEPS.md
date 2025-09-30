@@ -11,6 +11,8 @@
 ### Step 1: Build ORMD Parser & Validator 🎯
 **Goal:** Create the core data format that everything else depends on
 
+**Status:** ✅ Completed via [`packages/ormd-parser/`](./packages/ormd-parser/) workspace rollout.
+
 **Actions:**
 - Create `packages/ormd-parser/` package
 - Implement YAML frontmatter parsing
@@ -23,8 +25,10 @@
 ### Step 2: Create Context Bundle Storage
 **Goal:** Implement the data layer for context preservation
 
+**Status:** ✅ Completed through the [`packages/context-storage/`](./packages/context-storage/) workspace delivery.
+
 **Actions:**
-- Create `packages/context-storage/` package  
+- Create `packages/context-storage/` package
 - Set up PouchDB for local-first storage
 - Implement ContextBundle CRUD operations
 - Add lineage tracking functionality
@@ -32,20 +36,25 @@
 
 **Success:** Can store, retrieve, and link ContextBundles with lineage
 
-### Step 3: Build Minimal Chat Interface
-**Goal:** Create a simple web interface to test context preservation
+### Step 3: Ship the Chat Interface CLI
+**Goal:** Provide a terminal-first way to exercise the parser and storage layers
+
+**Status:** ✅ Delivered in [`packages/chat-interface/`](./packages/chat-interface/) via the [`src/cli.ts`](./packages/chat-interface/src/cli.ts) entry point.
 
 **Actions:**
-- Create `apps/chat-prototype/` web app
-- Build basic HTML/CSS/JS chat interface
-- Integrate context storage from Step 2
-- Add ORMD export functionality
-- Implement simple "conversation memory"
+- Implement CLI conversation loop backed by context storage
+- Expose commands for loading ORMD transcripts and persisting conversations
+- Integrate parser validation to guard saved context bundles
+- Provide developer ergonomics for testing upcoming AI integrations
 
-**Success:** Can have a conversation that preserves context and exports to ORMD
+**Success:** Developers can run the CLI to create and manage conversations end-to-end
+
+**Upcoming Focus:** Step 4 (AI integration) and Step 5 (Obsidian export) remain open and are outlined below.
 
 ### Step 4: Add AI Integration
 **Goal:** Get one AI model responding with context awareness
+
+**Status:** ⏳ Open milestone pending implementation.
 
 **Actions:**
 - Integrate OpenRouter API for model access
@@ -58,6 +67,8 @@
 
 ### Step 5: Implement Obsidian Export
 **Goal:** Bridge to existing knowledge management tools
+
+**Status:** ⏳ Open milestone pending implementation.
 
 **Actions:**
 - Create Obsidian-compatible file export
@@ -77,11 +88,11 @@
 5. **Flexible**: Can pivot to Rocket.Chat integration later when core is solid
 
 ## Estimated Timeline
-- **Step 1**: 2-3 days (ORMD parser is well-specified)
-- **Step 2**: 2-3 days (PouchDB is straightforward)  
-- **Step 3**: 3-4 days (Basic web interface)
-- **Step 4**: 2-3 days (OpenRouter integration)
-- **Step 5**: 2-3 days (File export is well-defined)
+- **Step 1**: ✅ Completed (ORMD parser workspace shipped on schedule)
+- **Step 2**: ✅ Completed (Context storage workspace implemented)
+- **Step 3**: ✅ Completed (Chat interface CLI delivered via chat-interface package)
+- **Step 4**: ⏳ 2-3 days (OpenRouter integration)
+- **Step 5**: ⏳ 2-3 days (File export is well-defined)
 
 **Total**: ~2 weeks of focused development
 
