@@ -12,7 +12,12 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nexes/ormd-parser": ["../ormd-parser/src"],
+      "@nexes/context-storage": ["../context-storage/src"]
+    }
   },
   "include": [
     "src/**/*"

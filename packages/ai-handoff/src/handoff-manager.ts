@@ -258,7 +258,7 @@ export class HandoffManager {
     }
 
     const results = await this.storage.query(searchQuery);
-    return results.bundles.map(bundle => bundle.id);
+    return results.bundles.map((bundle: any) => bundle.id);
   }
 
   /**
