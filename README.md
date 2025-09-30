@@ -57,6 +57,9 @@ npm run build:all
 
 # Test ORMD parser
 npm run test:ormd
+
+# Run AI handoff tests
+npm test --workspace @nexes/ai-handoff
 ```
 
 **Using yarn (if you have yarn 4.0+):**
