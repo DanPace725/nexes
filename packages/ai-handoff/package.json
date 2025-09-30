@@ -1,0 +1,32 @@
+{
+  "name": "@nexes/ai-handoff",
+  "version": "0.1.0",
+  "description": "AI handoff protocol for seamless context preservation across sessions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest"
+  },
+  "keywords": [
+    "ai",
+    "handoff",
+    "context",
+    "ormd",
+    "clp",
+    "session-management"
+  ],
+  "author": "E² Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "@nexes/ormd-parser": "file:../ormd-parser",
+    "@nexes/context-storage": "file:../context-storage",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
