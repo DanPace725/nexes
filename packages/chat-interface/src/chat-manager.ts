@@ -153,7 +153,7 @@ export class ChatManager {
     const participantNames = this.currentSession.participants.map(p => p.display).join(', ');
 
     this.handoffManager.updateContext({
-      summary: `Chat session "${this.currentSession.title}" with ${participantNames}`,
+      summary: `Chat session ${this.currentSession.title} with ${participantNames}`,
       objectives_completed: [`Completed chat session with ${messageCount} messages`],
       recommended_next_steps: [
         'Review chat history for key decisions',
