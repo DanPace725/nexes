@@ -161,11 +161,15 @@ class ChatCLI {
 
   private async createHandoff() {
     try {
+      const displayReason = 'Manual handoff requested by user';
+      const handoffReason = 'agent_switch' as const;
+
       const handoffId = await this.chatManager.createChatHandoff(
-        undefined, 
-        'Manual handoff requested by user'
+        undefined,
+        displayReason,
+        handoffReason
       );
-      
+
       console.log(`✅ Handoff created successfully!`);
       console.log(`📄 Handoff ID: ${handoffId.substring(0, 16)}`);
       console.log(`🔍 This handoff contains full context of the conversation.`);

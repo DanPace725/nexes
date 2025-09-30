@@ -5,7 +5,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
 import { ContextStorage } from '@nexes/context-storage';
-import { HandoffManager, HandoffAgent } from '@nexes/ai-handoff';
+import { HandoffManager, HandoffAgent, HandoffDocument } from '@nexes/ai-handoff';
 import { ORMDParser } from '@nexes/ormd-parser';
 
 export interface ChatMessage {
@@ -139,7 +139,11 @@ export class ChatManager {
   /**
    * Create handoff from current chat session
    */
-  async createChatHandoff(toAgent?: HandoffAgent, reason: string = 'Chat session handoff'): Promise<string> {
+  async createChatHandoff(
+    toAgent?: HandoffAgent,
+    reason: string = 'Chat session handoff',
+    handoffReason: HandoffDocument['frontmatter']['handoff']['handoff_reason'] = 'agent_switch'
+  ): Promise<string> {
     if (!this.currentSession?.handoff_session_id) {
       throw new Error('No active handoff session');
     }
@@ -168,7 +172,7 @@ export class ChatManager {
       ]
     });
 
-    const handoffId = await this.handoffManager.createHandoff(toAgent, 'agent_switch');
+    const handoffId = await this.handoffManager.createHandoff(toAgent, handoffReason);
 
     // Add handoff message to chat
     await this.addMessage({
