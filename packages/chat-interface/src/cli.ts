@@ -5,6 +5,8 @@
  */
 
 import * as readline from 'readline';
+import { writeFile } from 'fs/promises';
+import path from 'path';
 import { ContextStorage } from '@nexes/context-storage';
 import { HandoffAgent } from '@nexes/ai-handoff';
 import { ChatManager } from './chat-manager';
@@ -221,14 +223,18 @@ class ChatCLI {
     try {
       const ormdContent = await this.chatManager.exportChatAsORMD();
       const filename = `chat-export-${Date.now()}.ormd`;
-      
-      // In a real implementation, we'd write to file
+      const filePath = path.resolve(process.cwd(), filename);
+
+      await writeFile(filePath, ormdContent, 'utf8');
+
       console.log(`✅ Chat exported as ORMD`);
+      console.log(`💾 Saved to: ${filePath}`);
       console.log(`📄 Content preview (first 200 chars):`);
       console.log(`${ormdContent.substring(0, 200)}...\n`);
-      
+
     } catch (error) {
-      console.log(`❌ Error exporting chat: ${error}\n`);
+      const message = error instanceof Error ? error.message : String(error);
+      console.log(`❌ Error exporting chat: ${message}\n`);
     }
   }
 
