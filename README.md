@@ -35,27 +35,53 @@ This project is in the initial development phase, implementing the vision outlin
 
 ### Prerequisites
 - Node.js 18+ 
-- Yarn 4+
 - Docker (for development database)
+- npm or yarn
 
 ### Quick Start
+
+**Using npm (recommended for compatibility):**
 ```bash
 # Clone and setup
 git clone <repository-url>
 cd nexes
 
+# Install dependencies
+npm install
+
 # Start development database
-yarn start:mongo
+npm run start:mongo
 
-# Install dependencies (when ready)
+# Build all packages
+npm run build:all
+
+# Test ORMD parser
+npm run test:ormd
+```
+
+**Using yarn (if you have yarn 4.0+):**
+```bash
+# Same commands, replace 'npm run' with 'yarn'
 yarn install
-
-# Start development server (when implemented)
-yarn dev
+yarn start:mongo
+yarn build:all
+yarn test:ormd
 ```
 
 ### Run the chat demo
 
+**Using npm:**
+```bash
+# Build the chat interface
+cd packages/chat-interface
+npm install
+npm run build
+
+# Launch the CLI demo
+npm run start
+```
+
+**Using yarn workspaces:**
 ```bash
 # Build the chat interface workspace
 yarn workspace @nexes/chat-interface build

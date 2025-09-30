@@ -8,9 +8,16 @@
     "dev": "echo 'Development server not yet implemented'",
     "build": "echo 'Build process not yet implemented'",
     "test": "node ./scripts/run-tests.js",
-    "setup:rocketchat": "cd Rocket.Chat && yarn install",
+    "setup:rocketchat": "cd Rocket.Chat && npm install",
     "start:mongo": "cd Rocket.Chat && docker compose -f docker-compose-local.yml up -d mongo",
-    "stop:mongo": "cd Rocket.Chat && docker compose -f docker-compose-local.yml down"
+    "stop:mongo": "cd Rocket.Chat && docker compose -f docker-compose-local.yml down",
+    "build:all": "npm run build:ormd && npm run build:storage && npm run build:handoff && npm run build:chat",
+    "build:ormd": "cd packages/ormd-parser && npm run build",
+    "build:storage": "cd packages/context-storage && npm run build", 
+    "build:handoff": "cd packages/ai-handoff && npm run build",
+    "build:chat": "cd packages/chat-interface && npm run build",
+    "test:ormd": "cd packages/ormd-parser && node dist/cli.js parse \"../../docs/01_foundational_ethos.ormd\"",
+    "demo:chat": "cd packages/chat-interface && npm run start"
   },
   "keywords": [
     "ai",
@@ -23,8 +30,7 @@
   "author": "E² Development Team",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0",
-    "yarn": ">=4.0.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
