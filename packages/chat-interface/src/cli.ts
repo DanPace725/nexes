@@ -9,6 +9,8 @@ import { ContextStorage } from '@nexes/context-storage';
 import { HandoffAgent } from '@nexes/ai-handoff';
 import { ChatManager } from './chat-manager';
 
+type HandoffReason = 'session_end' | 'agent_switch' | 'escalation' | 'completion';
+
 class ChatCLI {
   private chatManager: ChatManager;
   private rl: readline.Interface;
@@ -159,22 +161,57 @@ class ChatCLI {
     });
   }
 
+  private askQuestion(prompt: string): Promise<string> {
+    return new Promise(resolve => {
+      this.rl.question(prompt, answer => resolve(answer.trim()));
+    });
+  }
+
   private async createHandoff() {
     try {
-      const displayReason = 'Manual handoff requested by user';
-      const handoffReason = 'agent_switch' as const;
+      const nextAgentId = await this.askQuestion('Next agent ID: ');
+      const nextAgentDisplay = await this.askQuestion('Next agent display name: ');
+      const nextAgentModel = await this.askQuestion('Next agent model: ');
+
+      const validReasons: HandoffReason[] = ['session_end', 'agent_switch', 'escalation', 'completion'];
+      let selectedReason: HandoffReason | undefined;
+
+      while (!selectedReason) {
+        const reasonInput = await this.askQuestion(
+          'Handoff reason (session_end/agent_switch/escalation/completion): '
+        );
+        const normalizedReason = reasonInput.toLowerCase() as HandoffReason;
+
+        if (validReasons.includes(normalizedReason)) {
+          selectedReason = normalizedReason;
+        } else {
+          console.log('❌ Invalid handoff reason. Please choose one of the listed options.');
+        }
+      }
+
+      const handoffAgent: HandoffAgent = {
+        id: nextAgentId || 'next-agent',
+        display: nextAgentDisplay || nextAgentId || 'Next Agent',
+        type: 'ai',
+        ...(nextAgentModel ? { model: nextAgentModel } : {})
+      };
+
+      const displayReason = `Manual handoff to ${handoffAgent.display}`;
 
       const handoffId = await this.chatManager.createChatHandoff(
-        undefined,
+        handoffAgent,
         displayReason,
-        handoffReason
+        selectedReason
       );
 
       console.log(`✅ Handoff created successfully!`);
       console.log(`📄 Handoff ID: ${handoffId.substring(0, 16)}`);
+      console.log(`👤 Next agent: ${handoffAgent.display} (${handoffAgent.id})`);
+      console.log(`📦 Model: ${handoffAgent.model ?? 'not specified'}`);
+      console.log(`🎯 Handoff reason: ${selectedReason}`);
       console.log(`🔍 This handoff contains full context of the conversation.`);
       console.log(`🔄 Future AI agents can continue from this point.\n`);
-      
+
     } catch (error) {
       console.log(`❌ Error creating handoff: ${error}\n`);
     }
